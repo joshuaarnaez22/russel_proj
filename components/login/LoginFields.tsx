@@ -147,7 +147,7 @@ const LoginFields = () => {
                     type="submit"
                     isLoading={isSubmitting}
                 >
-                    Login
+                    SignUp
                 </Button>
             </Flex>
         </>
