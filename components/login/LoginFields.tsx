@@ -9,6 +9,7 @@ import {
     Flex,
     Stack,
     Collapse,
+    useDisclosure,
 } from '@chakra-ui/react';
 import { FiEye, FiEyeOff } from 'react-icons/fi';
 import { useFormContext, useFormState } from 'react-hook-form';
@@ -16,8 +17,10 @@ import { useFormContext, useFormState } from 'react-hook-form';
 const LoginFields = () => {
     const [password, showPassword] = useState<boolean>(false);
     const [confirmPass, showConfirmPass] = useState<boolean>(false);
-
-    const { register } = useFormContext();
+    const {
+        register,
+        formState: { isSubmitting },
+    } = useFormContext();
     const { errors } = useFormState();
     return (
         <>
@@ -49,7 +52,10 @@ const LoginFields = () => {
                         }}
                         {...register('username')}
                     />
-                    <Collapse in={errors.username ? true : false}>
+                    <Collapse
+                        in={errors.username ? true : false}
+                        animateOpacity
+                    >
                         {errors.username && (
                             <Text fontSize="SubHeader.md" color="red">
                                 {errors.username.message as string}
@@ -139,6 +145,7 @@ const LoginFields = () => {
                     fontSize="SubHeader.lg"
                     bg="green500"
                     type="submit"
+                    isLoading={isSubmitting}
                 >
                     Login
                 </Button>

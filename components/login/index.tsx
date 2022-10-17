@@ -11,7 +11,7 @@ const BgProps = {
 import { FormProvider, useForm } from 'react-hook-form';
 import * as yup from 'yup';
 import { yupResolver } from '@hookform/resolvers/yup';
-import { Flex, Image } from '@chakra-ui/react';
+import { Flex, Image, useToast } from '@chakra-ui/react';
 
 const schema = yup.object().shape({
     username: yup.string().required('Username is required.'),
@@ -26,12 +26,28 @@ const Login = () => {
     const formMethods = useForm({
         resolver: yupResolver(schema),
     });
-    const { trigger } = formMethods;
-    const onSubmit = () => {
-        console.log(123);
-        trigger('username');
-        trigger('password');
-        trigger('confirmPassword');
+
+    const toast = useToast();
+
+    const onSubmit = async () => {
+        return new Promise((resolve) => {
+            setTimeout(() => {
+                toastUI(1, "We've created your account for you.");
+                resolve(true);
+            }, 3000);
+        });
+    };
+
+    const toastUI = (type: number, description: string) => {
+        toast({
+            status: type == 1 ? 'success' : 'error',
+            variant: 'left-accent',
+            position: 'top-right',
+            isClosable: true,
+            title: 'Account created.',
+            description: `${description}`,
+            duration: 5000,
+        });
     };
     return (
         <>
@@ -39,7 +55,7 @@ const Login = () => {
             <Flex
                 height="100vh"
                 position="relative"
-                justify="center"
+                pt="80px"
                 align="center"
                 direction="column"
             >
