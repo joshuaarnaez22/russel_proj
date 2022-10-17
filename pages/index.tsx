@@ -1,23 +1,17 @@
-import Layout from '@/layouts';
-import { ReactElement } from 'react';
-import type { NextPageWithLayout } from './_app';
-import Page from '@/components/home/Page';
+// import Layout from '@/layouts';
+// import { ReactElement } from 'react';
+// import type { NextPageWithLayout } from './_app';
 import { Box } from '@chakra-ui/react';
-const Home: NextPageWithLayout = () => {
-  return (
-    <Box  >
-    <Page />
+import Login from '@/components/login';
+const Home = () => {
+    return (
+        <Box>
+            <Login />
+        </Box>
+    );
+};
 
-
-    </Box>
-  )
-}
-
-Home.getLayout = function getLayout(page: ReactElement) {
-  return (
-    <Layout>
-     {page}
-    </Layout>
-  )
-}
-export default Home
+// Home.getLayout = function getLayout(page: ReactElement) {
+//     return <Layout>{page}</Layout>
+// }
+export default Home;
