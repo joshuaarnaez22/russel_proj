@@ -24,10 +24,12 @@ const FirstSection = () => {
           <Text
             {...HeaderMenuProps}
             color="white"
+            transition="all .5s ease-in-out"
             _hover={{
               transform: 'scale(1.2)',
-              transition: 'all .5s ease-in-out',
+              transition: 'all .5s  ease-in-out',
               cursor: 'pointer',
+              //   borderBottom: '1px solid black',
             }}
           >
             <a href="#section2">COMPANY</a>
@@ -35,6 +37,7 @@ const FirstSection = () => {
           <Text
             {...HeaderMenuProps}
             color="white"
+            transition="all .5s ease-in-out"
             _hover={{
               transform: 'scale(1.2)',
               transition: 'all .5s ease-in-out',
@@ -44,6 +47,7 @@ const FirstSection = () => {
           </Text>
           <Text
             {...HeaderMenuProps}
+            transition="all .5s ease-in-out"
             color="white"
             _hover={{
               transform: 'scale(1.2)',
@@ -55,6 +59,7 @@ const FirstSection = () => {
           <Text
             {...HeaderMenuProps}
             color="white"
+            transition="all .5s ease-in-out"
             _hover={{
               transform: 'scale(1.2)',
               transition: 'all .5s ease-in-out',
@@ -66,6 +71,7 @@ const FirstSection = () => {
         <Flex pr="50px">
           <Text
             {...HeaderMenuProps}
+            transition="all .5s ease-in-out"
             color="white"
             _hover={{
               transform: 'scale(1.2)',
