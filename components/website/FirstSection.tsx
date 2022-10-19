@@ -18,7 +18,7 @@ const FirstSection = () => {
   return (
     <Flex h="100vh" scrollSnapAlign="start">
       <Box zIndex="1" w="100vw" h="100vh" bg="#00000033" pos="absolute" />
-      <Image src="website_bg.png" alt="bg" {...BgProps} />
+      <Image src="website_bg.webp" alt="bg" {...BgProps} />
       <Flex zIndex="2" w="100vw" mt="10px" h="40px" align="center">
         <Flex flexGrow="1" justify="center" gap="40px">
           <Text

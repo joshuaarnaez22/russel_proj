@@ -1,45 +1,6 @@
 import { Flex, Grid, Image, Text } from '@chakra-ui/react';
 import React from 'react';
-import { IWebsiteResource } from '@/services/types';
-const ThirdSection = () => {
-  const resources: IWebsiteResource[] = [
-    {
-      img: 'mapcursor.png',
-      title: 'City center office',
-      description:
-        ' Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed doeiusmod tempor incididunt ut, Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed doeiusmod tempor incididunt ut ',
-    },
-    {
-      img: 'clock.png',
-      title: 'City center office',
-      description:
-        ' Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed doeiusmod tempor incididunt ut, Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed doeiusmod tempor incididunt ut ',
-    },
-    {
-      img: 'phone.png',
-      title: 'City center office',
-      description:
-        ' Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed doeiusmod tempor incididunt ut, Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed doeiusmod tempor incididunt ut ',
-    },
-    {
-      img: 'mapcursor.png',
-      title: 'City center office',
-      description:
-        ' Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed doeiusmod tempor incididunt ut, Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed doeiusmod tempor incididunt ut ',
-    },
-    {
-      img: 'leaves.png',
-      title: 'City center office',
-      description:
-        ' Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed doeiusmod tempor incididunt ut, Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed doeiusmod tempor incididunt ut ',
-    },
-    {
-      img: 'swap.png',
-      title: 'City center office',
-      description:
-        ' Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed doeiusmod tempor incididunt ut, Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed doeiusmod tempor incididunt ut ',
-    },
-  ];
+const ThirdSection = ({ resources }: any) => {
   return (
     <>
       <Flex
@@ -47,11 +8,12 @@ const ThirdSection = () => {
         align="center"
         flexWrap="wrap"
         gap="20px"
-        py="100px"
+        pt="50px"
+        pb="100px"
         scrollSnapAlign="start"
         scrollSnapStop="always"
       >
-        {resources.map(({ img, title, description }, index) => {
+        {resources.map(({ img, title, description }: any, index: number) => {
           return (
             <Flex
               key={index}

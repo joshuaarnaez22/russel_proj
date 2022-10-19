@@ -26,7 +26,7 @@ const HeaderMenuProps = {
   fontWeight: 'normal',
   cursor: 'pointer',
 };
-const Website = () => {
+const Website = ({ resources }: any) => {
   return (
     <>
       <Box
@@ -42,7 +42,7 @@ const Website = () => {
       >
         <FirstSection />
         <SecondSection />
-        <ThirdSection />
+        <ThirdSection resources={resources} />
 
         <Flex h="100vh" scrollSnapAlign="start" scrollSnapStop="always">
           footer
