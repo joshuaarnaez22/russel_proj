@@ -7,6 +7,7 @@ const errorResponseHandler = (error: any) => {
 export const instance = axios.create({
   // baseURL: process.env.DEVELOPMENT_URL,
   headers: {
+    'Access-Control-Allow-Origin': '*',
     'Content-Type': 'application/json',
   },
 });
