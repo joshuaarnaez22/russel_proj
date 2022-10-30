@@ -1,4 +1,4 @@
-const LOCALDEV = 'https://back-end-ochre-five.vercel.app';
+const LOCALDEV = 'https://back-end-ochre-five.vercel.app/';
 //Authentication
 export const login = `${LOCALDEV}/authentication/login`;
 
