@@ -3,10 +3,9 @@ import type { NextRequest } from 'next/server';
 
 // This function can be marked `async` if using `await` inside
 export function middleware(request: NextRequest) {
-  const token = request.cookies.get('token');
-  const { origin } = request.nextUrl;
-  if (!token) return NextResponse.redirect(`${origin}`);
-
+  // const token = request.cookies.get('token');
+  // const { origin } = request.nextUrl;
+  // if (!token) return NextResponse.redirect(`${origin}`);
   // return NextResponse.redirect(new URL('/about-2', request.url))
 }
 // See "Matching Paths" below to learn more
