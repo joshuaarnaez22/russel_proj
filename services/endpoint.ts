@@ -1,4 +1,6 @@
-const LOCALDEV = 'http://localhost:3000';
+// const LOCALDEV = 'http://localhost:3000';
+const LOCALDEV = 'https://back-end-ochre-five.vercel.app/';
+
 //Authentication
 export const login = `${LOCALDEV}/authentication/login`;
 
