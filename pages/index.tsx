@@ -1,11 +1,11 @@
 import Login from '@/components/login';
 import React from 'react';
 const Home = () => {
-    return (
-        <>
-            <Login />
-        </>
-    );
+  return (
+    <>
+      <Login />
+    </>
+  );
 };
 
 // Home.getLayout = function getLayout(page: ReactElement) {

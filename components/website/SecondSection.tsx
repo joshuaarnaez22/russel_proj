@@ -11,7 +11,6 @@ const SecondSection = () => {
         justify="center"
         align="center"
         id="section2"
-        scrollSnapAlign="start"
       >
         <Text fontFamily="robo" fontSize="50px" fontWeight="extranormal">
           Book your place

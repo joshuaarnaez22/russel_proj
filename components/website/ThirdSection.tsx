@@ -10,8 +10,6 @@ const ThirdSection = ({ resources }: any) => {
         gap="20px"
         pt="50px"
         pb="100px"
-        scrollSnapAlign="start"
-        scrollSnapStop="always"
       >
         {resources.map(({ img, title, description }: any, index: number) => {
           return (

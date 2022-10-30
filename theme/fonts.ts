@@ -20,6 +20,10 @@ export const fontWeights = {
 
 export const fonts = {
   opensans: 'Open Sans',
-  lexendDeca: `"Lexend Deca", sans-serif`,
+  lexendDeca: 'Lexend Deca',
   robo: `"Roboto", sans-serif`,
+  mulish: 'Mulish',
+  montserrat: 'Montserrat',
+  clanPro: 'Clan Pro',
+  milkyNice: 'Milky Nice',
 };

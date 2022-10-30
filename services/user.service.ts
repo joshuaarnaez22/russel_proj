@@ -1,14 +1,19 @@
 import { instance } from './client';
-import { addUser } from './endpoint';
+import { addUser, getAllUser } from './endpoint';
 import { ILogin } from './types';
 export const createUser = async (payload: ILogin) => {
   console.log(payload);
 
   const data = {
-    username: 'lolol',
-    role: 'admin',
+    // username: 'lolol',
+    role: '',
     ...payload,
   };
   const query = await instance.post(addUser, data);
   return query;
+};
+
+export const allUser = async () => {
+  const { data } = await instance.get(getAllUser);
+  return data;
 };

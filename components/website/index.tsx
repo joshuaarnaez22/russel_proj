@@ -38,14 +38,28 @@ const Website = ({ resources }: any) => {
         pos="relative"
         m="0"
         p="0"
-        scrollSnapType="y mandatory"
+        w="100vw"
       >
         <FirstSection />
         <SecondSection />
         <ThirdSection resources={resources} />
 
-        <Flex h="100vh" scrollSnapAlign="start" scrollSnapStop="always">
-          footer
+        <Flex>
+          <Flex
+            bg="black"
+            h="100px"
+            w="100vw"
+            gap="20px"
+            justify="center"
+            align="center"
+          >
+            <Text color="white">F</Text>
+            <Text color="white">o</Text>
+            <Text color="white">o</Text>
+            <Text color="white">t</Text>
+            <Text color="white">e</Text>
+            <Text color="white">r</Text>
+          </Flex>
         </Flex>
       </Box>
     </>

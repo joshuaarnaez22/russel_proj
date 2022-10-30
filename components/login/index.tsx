@@ -6,40 +6,34 @@ const BgProps = {
   pos: 'absolute',
   zIndex: '0',
 } as any;
-
+import { useRouter } from 'next/router';
 import { FormProvider, useForm } from 'react-hook-form';
 import * as yup from 'yup';
 import { yupResolver } from '@hookform/resolvers/yup';
 import { Flex, Image, useToast } from '@chakra-ui/react';
-import { createUser } from '@/services/user.service';
+import { loginAuth } from '@/services/auth';
 const schema = yup.object().shape({
-  email: yup
-    .string()
-    .email('Not a proper email')
-    .required('Email is required.'),
+  username: yup.string().required('Username is required.'),
   password: yup.string().required('Password is required.'),
 });
 
 const Login = () => {
+  const router = useRouter();
   const formMethods = useForm({
     resolver: yupResolver(schema),
   });
 
   const toast = useToast();
 
-  const onSubmit = async () => {
-    return new Promise((resolve, reject) => {
-      try {
-        // const response = createUser();
-        // console.log(response);
-      } catch (error) {
-        reject(error);
-      }
-      // setTimeout(() => {
-      //     toastUI(1, "We've created your account for you.");
-      //     resolve(true);
-      // }, 3000);
-    });
+  const onSubmit = async (payload: any) => {
+    try {
+      const { data } = await loginAuth(payload);
+      const { token, role } = await data;
+      localStorage.setItem('token', token);
+      router.push(`${role}/dashboard`);
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   const toastUI = (type: number, description: string) => {
