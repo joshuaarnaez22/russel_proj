@@ -1,22 +1,24 @@
 import React from 'react';
 import LoginFields from './LoginFields';
-const BgProps = {
-  height: '100%',
-  width: '100%',
-  pos: 'absolute',
-  zIndex: '0',
-} as any;
+
 import { useRouter } from 'next/router';
 import { FormProvider, useForm } from 'react-hook-form';
 import * as yup from 'yup';
 import { yupResolver } from '@hookform/resolvers/yup';
 import { Flex, Image, useToast } from '@chakra-ui/react';
 import { loginAuth } from '@/services/auth';
+import cookie from 'js-cookie';
 const schema = yup.object().shape({
   username: yup.string().required('Username is required.'),
   password: yup.string().required('Password is required.'),
 });
 
+const BgProps = {
+  height: '100%',
+  width: '100%',
+  pos: 'absolute',
+  zIndex: '0',
+} as any;
 const Login = () => {
   const router = useRouter();
   const formMethods = useForm({
@@ -29,7 +31,7 @@ const Login = () => {
     try {
       const { data } = await loginAuth(payload);
       const { token, role } = await data;
-      localStorage.setItem('token', token);
+      cookie.set('token', token);
       router.push(`${role}/dashboard`);
     } catch (error) {
       console.log(error);

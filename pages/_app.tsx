@@ -7,19 +7,19 @@ import type { ReactElement, ReactNode } from 'react';
 import type { NextPage } from 'next';
 import React from 'react';
 export type NextPageWithLayout<P = {}, IP = P> = NextPage<P, IP> & {
-    getLayout?: (page: ReactElement) => ReactNode;
+  getLayout?: (page: ReactElement) => ReactNode;
 };
 
 type AppPropsWithLayout = AppProps & {
-    Component: NextPageWithLayout;
+  Component: NextPageWithLayout;
 };
 function MyApp({ Component, pageProps }: AppPropsWithLayout) {
-    const getLayout = Component.getLayout || ((page) => page);
-    return (
-        <ChakraProvider theme={theme}>
-            {getLayout(<Component {...pageProps} />)}
-        </ChakraProvider>
-    );
+  const getLayout = Component.getLayout || ((page) => page);
+  return (
+    <ChakraProvider theme={theme}>
+      {getLayout(<Component {...pageProps} />)}
+    </ChakraProvider>
+  );
 }
 
 export default MyApp;

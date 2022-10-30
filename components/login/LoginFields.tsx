@@ -29,12 +29,12 @@ const LoginFields = () => {
           Sign In
         </Text>
         <Text fontSize="Header.xs" fontWeight="normal" fontFamily="lexendDeca">
-          Sign in and start managing your candidates!
+          Sign in to Holy Infant.
         </Text>
         <Stack>
           <Input
             variant="basic"
-            placeholder="Email"
+            placeholder="Username"
             w="300px"
             autoComplete="off"
             _placeholder={{
@@ -45,10 +45,10 @@ const LoginFields = () => {
             }}
             {...register('username')}
           />
-          <Collapse in={errors.email ? true : false} animateOpacity>
-            {errors.email && (
+          <Collapse in={errors.username ? true : false} animateOpacity>
+            {errors.username && (
               <Text fontSize="SubHeader.md" color="red">
-                {errors.email.message as string}
+                {errors.username.message as string}
               </Text>
             )}
           </Collapse>
