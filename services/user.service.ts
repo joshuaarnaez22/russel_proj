@@ -2,8 +2,6 @@ import { instance } from './client';
 import { addUser, getAllUser } from './endpoint';
 import { ILogin } from './types';
 export const createUser = async (payload: ILogin) => {
-  console.log(payload);
-
   const data = {
     // username: 'lolol',
     role: '',
