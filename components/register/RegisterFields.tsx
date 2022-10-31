@@ -25,11 +25,21 @@ const RegisterFields = () => {
   return (
     <>
       <Flex gap="5" direction="column" align="center">
-        <Text fontSize="Header.lg" fontWeight="normal" fontFamily="lexendDeca">
+        <Text
+          fontSize="Header.lg"
+          fontWeight="normal"
+          fontFamily="lexendDeca"
+          color="white"
+        >
           Register
         </Text>
-        <Text fontSize="Header.xs" fontWeight="normal" fontFamily="lexendDeca">
-          Register and start managing your candidates!
+        <Text
+          fontSize="Header.xs"
+          fontWeight="normal"
+          fontFamily="lexendDeca"
+          color="white"
+        >
+          Lorem ipsum dolor sit amet!
         </Text>
         <Stack>
           <Input
@@ -140,7 +150,7 @@ const RegisterFields = () => {
         >
           SignUp
         </Button>
-        <Text>
+        <Text color="white">
           Already have an account?{' '}
           <Link href="/" target="_blank">
             <Text as="span" fontWeight="bold" _hover={{ cursor: 'pointer' }}>

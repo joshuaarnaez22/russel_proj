@@ -25,11 +25,21 @@ const LoginFields = () => {
   return (
     <>
       <Flex gap="5" direction="column" align="center">
-        <Text fontSize="Header.lg" fontWeight="normal" fontFamily="lexendDeca">
+        <Text
+          fontSize="Header.lg"
+          fontWeight="normal"
+          fontFamily="lexendDeca"
+          color="white"
+        >
           Sign In
         </Text>
-        <Text fontSize="Header.xs" fontWeight="normal" fontFamily="lexendDeca">
-          Sign in to Holy Infant.
+        <Text
+          fontSize="Header.xs"
+          fontWeight="normal"
+          fontFamily="lexendDeca"
+          color="white"
+        >
+          lorem ipsum dolor sit amet, consectetur adipis.
         </Text>
         <Stack>
           <Input
@@ -102,7 +112,7 @@ const LoginFields = () => {
         >
           Login
         </Button>
-        <Text>
+        <Text color="white">
           Don’t have an account?{' '}
           <Link href="/register" target="_blank">
             <Text as="span" fontWeight="bold" _hover={{ cursor: 'pointer' }}>

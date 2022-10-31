@@ -3,17 +3,16 @@ import { NextPageWithLayout } from 'pages/_app';
 import React, { ReactElement } from 'react';
 import { thinScollbar } from '@/components/Scrollbar';
 import { allUser } from '@/services/user.service';
-import Accounts from '@/components/admin/accounts';
 import { Box } from '@chakra-ui/react';
 
-export async function getServerSideProps() {
-  const { user: users } = await allUser();
-  return {
-    props: { users }, // will be passed to the page component as props
-  };
-}
+// export async function getServerSideProps() {
+//   const { user: users } = await allUser();
+//   return {
+//     props: { users }, // will be passed to the page component as props
+//   };
+// }
 
-const dashboard: NextPageWithLayout = ({ users }: any) => {
+const dashboard: NextPageWithLayout = () => {
   return (
     <Box
       w="100%"
@@ -23,7 +22,7 @@ const dashboard: NextPageWithLayout = ({ users }: any) => {
       sx={thinScollbar}
       p="20px"
     >
-      <Accounts users={users} />
+      Dashboard
     </Box>
   );
 };

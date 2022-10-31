@@ -11,8 +11,11 @@ import {
 } from '@chakra-ui/react';
 import { AiFillBell } from 'react-icons/ai';
 import React from 'react';
+import cookie from 'js-cookie';
+import { useRouter } from 'next/router';
 
 const Navbar = () => {
+  const router = useRouter();
   return (
     <Flex
       h="10vh"
@@ -28,7 +31,7 @@ const Navbar = () => {
           <Icon as={AiFillBell} w="20px" h="20px" />
           <Box w="1px" bg="gray" h="30px" opacity=".5" />
           <Text
-            fontFamily="opensans"
+            fontFamily="lexendDeca"
             fontSize="SubHeader.lg"
             fontWeight="semibold"
           >
@@ -53,7 +56,14 @@ const Navbar = () => {
             </MenuButton>
             <MenuList minW="100px">
               <MenuItem>Profile</MenuItem>
-              <MenuItem>Log out</MenuItem>
+              <MenuItem
+                onClick={() => {
+                  cookie.remove('token');
+                  router.push('/');
+                }}
+              >
+                Log out
+              </MenuItem>
             </MenuList>
           </Menu>
         </Flex>

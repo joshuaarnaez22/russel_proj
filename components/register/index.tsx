@@ -62,7 +62,7 @@ const Register = () => {
   };
   return (
     <>
-      <Image src="loginBg.jpg" alt="bg" {...BgProps} />
+      <Image src="login_bg_dark.webp" alt="bg" {...BgProps} />
       <Flex
         height="100vh"
         position="relative"

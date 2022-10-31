@@ -30,28 +30,34 @@ const Login = () => {
   const onSubmit = async (payload: any) => {
     try {
       const { data } = await loginAuth(payload);
-      const { token, role } = await data;
-      cookie.set('token', token);
-      router.push(`${role}/dashboard`);
+      const { token, role, success, message } = data;
+      if (success) {
+        cookie.set('token', token);
+        toastUI(1, `Welcome ${role}`, 'Login successfully.');
+        router.push(`${role}/dashboard`);
+      } else {
+        return toastUI(2, message, 'Not found.');
+      }
     } catch (error) {
+      toastUI(2, 'Something went wrong', 'Error');
       console.log(error);
     }
   };
 
-  const toastUI = (type: number, description: string) => {
+  const toastUI = (type: number, description: string, title: string) => {
     toast({
       status: type == 1 ? 'success' : 'error',
       variant: 'left-accent',
       position: 'top-right',
       isClosable: true,
-      title: 'Account created.',
+      title,
       description: `${description}`,
       duration: 5000,
     });
   };
   return (
     <>
-      <Image src="loginBg.jpg" alt="bg" {...BgProps} />
+      <Image src="login_bg_dark.webp" alt="bg" {...BgProps} />
       <Flex
         height="100vh"
         position="relative"
